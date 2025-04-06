@@ -39,7 +39,7 @@ const Movie = () => {
                     />
                 </View>
 
-                <View className="flex-col items-start justify-center mt-5 px-5">
+                <View className="flex-col items-start justify-center mt-5 px-5 mb-5">
                     <Text className="text-white font-bold text-xl">{movie?.title}</Text>
                     
                     <View className="flex-row items-center gap-x-1 mt-2">
@@ -64,15 +64,15 @@ const Movie = () => {
                     <MovieInfo label="Production Company" value={movie?.production_companies.map((g) => g.name).join(' - ') || 'N/A'} />
                     <MovieInfo label="Production Countries" value={movie?.production_countries.map((g) => g.name).join(' - ') || 'N/A'} />
 
-                    <TouchableOpacity
-                        className="absolute bottom-5 left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50"
-                        onPress={router.back}
-                    >
-                        <Image source={icons.arrow} resizeMode="stretch" className="size-5 mt-0.5 mr-1 rotate-180" tintColor="#fff" />
-                        <Text className="text-white text-base font-semibold">Go back</Text>
-                    </TouchableOpacity>
-
                 </View>
+
+                <TouchableOpacity
+                    className="absolute bottom-5 left-0 right-0 mx-5 mb-4 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50"
+                    onPress={router.back}
+                >
+                    <Image source={icons.arrow} resizeMode="stretch" className="size-5 mt-0.5 mr-1 rotate-180" tintColor="#fff" />
+                    <Text className="text-white text-base font-semibold">Go back</Text>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     )
